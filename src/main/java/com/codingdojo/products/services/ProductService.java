@@ -18,4 +18,20 @@ public class ProductService {
 	public ArrayList<Product> all(){
 		return (ArrayList<Product>) productRepository.findAll();
 	}
+	
+	public Product findOne(Long id) {
+		return productRepository.findById(id).get();
+	}
+	
+	public void create(Product product){
+		productRepository.save(product);
+	}
+	
+	public void destroy(Long id){
+		productRepository.deleteById(id);
+	}
+	
+	public void update(Product product){
+		productRepository.save(product);
+	}
 }

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Product {
@@ -11,9 +12,11 @@ public class Product {
 	@GeneratedValue
 	private Long id;
 	
-	@Min(1)
-	private String name;
+	@Size(min=1,max=255,message="GIVE YOUR PRODUCT A NAME!!!!!!!!")
 	
+	private String name;
+
+	@Min(1)	
 	private double cost;	
 	
 	public Product() {
